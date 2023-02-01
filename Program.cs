@@ -1,6 +1,5 @@
 
-using NetCoreMaster.Application.Interfaces;
-using NetCoreMaster.Application.Services;
+
 
 namespace NetCoreMaster
 {
@@ -9,8 +8,6 @@ namespace NetCoreMaster
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-           // builder.Services.AddScoped<ISchoolService,ServiceSudent>();
-            builder.Services.AddScoped<ISchoolService, ServiceTeacher>();
             // Add services to the container.
 
             builder.Services.AddControllers();
