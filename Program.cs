@@ -1,23 +1,23 @@
 
-using NetCoreMaster.Application.Interfaces;
-using NetCoreMaster.Application.Services;
-
 namespace NetCoreMaster
 {
+    using NetCoreMaster.Extensions;
     public class Program
     {
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-           // builder.Services.AddScoped<ISchoolService,ServiceSudent>();
-            builder.Services.AddScoped<ISchoolService, ServiceTeacher>();
+
             // Add services to the container.
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
-
+            // remove this AddSwaggerGen and add this logic i will add i am now 
+            // builder.Services.AddSwaggerGen();
+            // here this line code i will add 
+            builder.Services.ConfigSawgger();
+;
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

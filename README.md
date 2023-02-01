@@ -2,3 +2,8 @@
 by hamza zeryouh
 gmail:zeryouhbusiness@gmail.com
 Linkdin: https://www.linkedin.com/in/hamza-zeryouh/
+
+Add custom Swagger in .net core 7 
+
+
+
