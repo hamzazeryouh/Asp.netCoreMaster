@@ -9,7 +9,9 @@ namespace NetCoreMaster
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-           // builder.Services.AddScoped<ISchoolService,ServiceSudent>();
+            // service normal 
+            builder.Services.AddScoped<ServiceSudent>();
+            // service dependency injection 
             builder.Services.AddScoped<ISchoolService, ServiceTeacher>();
             // Add services to the container.
 
