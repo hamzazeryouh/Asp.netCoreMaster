@@ -2,8 +2,11 @@
 
 
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using NetCoreMaster.Persistence.Context;
 using System.Text;
 
 namespace NetCoreMaster
@@ -32,7 +35,8 @@ namespace NetCoreMaster
 					ValidateAudience = false
 				};
 			});
-
+			builder.Services.AddDbContext<ApplicationDbContext>(options =>
+	options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 			builder.Services.AddSwaggerGen(option =>
 			{
 				option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
